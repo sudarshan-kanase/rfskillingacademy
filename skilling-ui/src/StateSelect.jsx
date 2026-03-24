@@ -1,16 +1,57 @@
 function StateSelect() {
   return (
-    <div style={{ background: "#e8ddc6" }} className="py-5">
+    <div className="rf-reach-section py-5">
+
       <div className="container">
 
-        <select className="form-select w-25">
-          <option>Maharashtra</option>
-          <option>Gujarat</option>
-          <option>Karnataka</option>
-          <option>Delhi</option>
-        </select>
+        <h1 className="rf-reach-title mb-4">
+          Reach
+        </h1>
+
+        <div className="row align-items-center">
+
+          {/* LEFT CONTENT */}
+          <div className="col-lg-5">
+
+            <select className="rf-state-dropdown mb-4">
+              <option>Maharashtra</option>
+              <option>Gujarat</option>
+              <option>Karnataka</option>
+              <option>Delhi</option>
+            </select>
+
+            <div className="d-flex gap-4">
+
+              <div className="rf-reach-card green">
+                <h2>32</h2>
+                <p>Districts</p>
+              </div>
+
+              <div className="rf-reach-card gold">
+                <h2>15629</h2>
+                <p>Youth</p>
+              </div>
+
+            </div>
+
+          </div>
+
+          {/* RIGHT MAP */}
+          <div className="col-lg-7 text-center">
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/5/55/India_location_map.svg"
+              alt="india map"
+              className="rf-map"
+            />
+          </div>
+
+        </div>
 
       </div>
+
+      {/* BOTTOM CURVE */}
+      <div className="rf-bottom-wave"></div>
+
     </div>
   );
 }

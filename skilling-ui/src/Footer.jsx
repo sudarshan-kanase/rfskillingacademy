@@ -1,44 +1,76 @@
 function Footer() {
   return (
-    <div style={{ background: "#e9f0ef" }} className="pt-5 pb-3">
-      <div className="container">
+    <div className="rf-footer">
+
+      <div className="container py-5">
 
         <div className="row">
 
-          <div className="col-md-4">
-            <h5 className="fw-bold">Reliance Skilling Academy</h5>
-            <p>
-              A one-stop destination for career needs offering courses,
-              mentorship and job opportunities.
+          {/* LEFT */}
+          <div className="col-lg-4 mb-4">
+
+            <div className="d-flex align-items-center gap-3 mb-3">
+
+              <div className="rf-logo-circle"></div>
+
+              <div>
+                <div className="rf-reliance">Reliance</div>
+                <div className="rf-foundation">Foundation</div>
+              </div>
+
+              <div className="rf-divider"></div>
+
+              <div className="rf-academy">
+                SKILLING <br/> ACADEMY
+              </div>
+
+            </div>
+
+            <p className="rf-footer-text">
+              The Reliance Foundation Skilling Academy bridges skill gaps by
+              facilitating lifelong learning journeys, and guides youth in
+              navigating the changing job market.
             </p>
+
           </div>
 
-          <div className="col-md-4">
-            <h6 className="fw-bold">IMPORTANT LINKS</h6>
-            <p>Skill Development</p>
-            <p>Job Opportunities</p>
-            <p>Mentorship</p>
-            <p>About Us</p>
-            <p>Certificate Verification</p>
-            <p>FAQ</p>
+          {/* LINKS */}
+          <div className="col-lg-4 mb-4">
+            <h5 className="rf-footer-title">IMPORTANT LINKS</h5>
+
+            <ul className="rf-footer-links">
+              <li>→ Skill Development</li>
+              <li>→ Job Opportunities</li>
+              <li>→ Mentorship</li>
+              <li>→ About us</li>
+              <li>→ Certificate Verification</li>
+              <li>→ FAQ</li>
+            </ul>
           </div>
 
-          <div className="col-md-4">
-            <h6 className="fw-bold">CONNECT WITH US</h6>
-            <p>LinkedIn</p>
-            <p>Instagram</p>
-            <p>Facebook</p>
+          {/* SOCIAL */}
+          <div className="col-lg-4 mb-4">
+            <h5 className="rf-footer-title">CONNECT WITH US</h5>
+
+            <div className="rf-social">
+              <span className="rf-icon fb">f</span>
+              <span className="rf-icon x">x</span>
+              <span className="rf-icon insta">●</span>
+              <span className="rf-icon yt">▶</span>
+              <span className="rf-icon in">in</span>
+            </div>
           </div>
 
         </div>
 
-        <hr />
-
-        <p className="text-center">
-          © 2025 All rights reserved. Terms & Conditions.
+        <p className="text-center mt-4 rf-copy">
+          © 2025. All rights reserved. Terms & Conditions.
         </p>
 
       </div>
+
+      <div className="rf-footer-wave"></div>
+
     </div>
   );
 }

@@ -2,7 +2,6 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
 import Navbar from "./Navbar";
 import HeroSlider from "./HeroSlider";
-import About from "./About";
 import Programs from "./Programs";
 import Impact from "./Impact";
 import StateSelect from "./StateSelect";
@@ -10,7 +9,7 @@ import BottomCarousel from "./BottomCarousel";
 import Footer from "./Footer";
 import Dashboard from "./Dashboard";
 import AuthModal from "./AuthModal";
-
+import AcademySection from "./AcademySection";
 
 // HOME PAGE COMPONENT
 function Home() {
@@ -18,7 +17,7 @@ function Home() {
     <>
       <Navbar />
       <HeroSlider />
-      <About />
+      <AcademySection />   
       <Programs />
       <Impact />
       <StateSelect />
