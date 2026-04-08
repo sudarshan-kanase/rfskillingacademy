@@ -1,3 +1,5 @@
+import logo from "./assets/logo.jpeg";
+
 function Footer() {
   return (
     <div className="rf-footer">
@@ -9,27 +11,14 @@ function Footer() {
           {/* LEFT */}
           <div className="col-lg-4 mb-4">
 
-            <div className="d-flex align-items-center gap-3 mb-3">
-
-              <div className="rf-logo-circle"></div>
-
-              <div>
-                <div className="rf-reliance">Reliance</div>
-                <div className="rf-foundation">Foundation</div>
-              </div>
-
-              <div className="rf-divider"></div>
-
-              <div className="rf-academy">
-                SKILLING <br/> ACADEMY
-              </div>
-
+            <div className="mb-3">
+              <img src={logo} alt="Senseigen" className="rf-footer-logo" />
             </div>
 
             <p className="rf-footer-text">
-              The Reliance Foundation Skilling Academy bridges skill gaps by
-              facilitating lifelong learning journeys, and guides youth in
-              navigating the changing job market.
+              Senseigen helps students grow with real-world skills,
+              mentorship, and career opportunities. We focus on
+              Exposure, Wisdom, and Support to build future-ready talent.
             </p>
 
           </div>
@@ -39,11 +28,11 @@ function Footer() {
             <h5 className="rf-footer-title">IMPORTANT LINKS</h5>
 
             <ul className="rf-footer-links">
-              <li>→ Skill Development</li>
-              <li>→ Job Opportunities</li>
-              <li>→ Mentorship</li>
-              <li>→ About us</li>
-              <li>→ Certificate Verification</li>
+              <li>→ Programs</li>
+              <li>→ Impact</li>
+              <li>→ Benefits</li>
+              <li>→ Reach</li>
+              <li>→ Dashboard</li>
               <li>→ FAQ</li>
             </ul>
           </div>
@@ -64,7 +53,7 @@ function Footer() {
         </div>
 
         <p className="text-center mt-4 rf-copy">
-          © 2025. All rights reserved. Terms & Conditions.
+          © 2026 Senseigen. All rights reserved.
         </p>
 
       </div>

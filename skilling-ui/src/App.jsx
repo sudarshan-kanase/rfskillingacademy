@@ -10,6 +10,7 @@ import Footer from "./Footer";
 import Dashboard from "./Dashboard";
 import AuthModal from "./AuthModal";
 import AcademySection from "./AcademySection";
+import Benefits from "./Benefits";
 
 // HOME PAGE COMPONENT
 function Home() {
@@ -20,6 +21,7 @@ function Home() {
       <AcademySection />   
       <Programs />
       <Impact />
+      <Benefits />
       <StateSelect />
       <BottomCarousel />
       <Footer />

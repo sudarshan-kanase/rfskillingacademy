@@ -5,9 +5,9 @@ function Hero() {
         <div className="row align-items-center">
 
           <div className="col-md-6">
-            <h1 className="display-5 fw-bold text-success">
-              Explore a world of possibilities
-            </h1>
+            <h1 className="display-4 fw-bold mb-3">
+  Explore a world of <span className="text-primary">possibilities</span>
+</h1>
 
             <p>
               Find the perfect job for you and take the next step in your career journey

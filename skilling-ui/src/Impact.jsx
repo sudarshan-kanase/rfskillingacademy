@@ -1,7 +1,6 @@
 function Impact() {
   return (
-    <div className="rf-impact-section py-5">
-
+     <div id="impact" className="rf-impact-section py-5">
       <div className="container">
 
         <h1 className="rf-impact-title text-center mb-5">

@@ -28,7 +28,7 @@ function HeroSlider() {
         <div className="row align-items-center">
 
           <div className="col-md-6">
-            <h1 className="display-5 fw-bold text-success">
+            <h1 className="display-5 fw-bold text-primary">
               {slides[index].title}
             </h1>
 

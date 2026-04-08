@@ -1,7 +1,6 @@
 function Programs() {
   return (
-    <div className="rf-program-section py-5">
-
+     <div id="programs" className="rf-program-section py-5">
       <div className="container">
 
         <h1 className="rf-program-title text-center mb-5">
@@ -12,7 +11,7 @@ function Programs() {
 
           {/* CARD 1 */}
           <div className="col-lg-4">
-            <div className="rf-program-card green-border">
+            <div className="rf-program-card primary-border">
 
               <div className="rf-program-icon green-bg">
                 💡
@@ -27,7 +26,7 @@ function Programs() {
                 </p>
               </div>
 
-              <div className="rf-program-footer green-bg-light">
+              <div className="rf-program-footer primary-bg-light">
                 Flexible Learning. Continuous Upskilling.
                 Enhanced Competencies. Career Progression
               </div>
@@ -37,9 +36,9 @@ function Programs() {
 
           {/* CARD 2 */}
           <div className="col-lg-4">
-            <div className="rf-program-card green-border">
+            <div className="rf-program-card primary-border">
 
-              <div className="rf-program-icon green-bg">
+              <div className="rf-program-icon primary-bg">
                 🧑‍💼
               </div>
 
@@ -52,7 +51,7 @@ function Programs() {
                 </p>
               </div>
 
-              <div className="rf-program-footer green-bg-light">
+              <div className="rf-program-footer primary-bg-light">
                 Streamlined Job Search. Simplified Application Process.
                 Career Advancement Support
               </div>

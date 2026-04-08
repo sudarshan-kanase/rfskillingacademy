@@ -1,15 +1,10 @@
 function AcademySection() {
   return (
     <div className="rf-academy-section py-5">
-
       <div className="container">
-
-        <h1 className="rf-academy-title mb-4">
-          Skilling Academy
-        </h1>
+        <h1 className="rf-academy-title mb-4">SENSEIGEN Academy</h1>
 
         <div className="row align-items-center">
-
           {/* LEFT IMAGE */}
           <div className="col-lg-8">
             <img
@@ -19,25 +14,26 @@ function AcademySection() {
             />
 
             <p className="rf-academy-text mt-4">
-              A one-stop destination for all your career needs, the Reliance Foundation
-              Skilling Academy offers a wide range of in-demand courses thoughtfully
-              designed to make learning fruitful and enjoyable, personalised mentorship
-              from experts to guide you and the most exciting work opportunities from
-              across industries.
+              SENSEIGEN Pvt. Ltd. is a forward-thinking education and training
+              organization committed to bridging the gap between academic
+              learning, real-world readiness, and final placements. Operating at
+              the intersection of education, industry, and innovation, we
+              collaborate with schools and colleges to deliver high-impact
+              programs that go beyond the traditional classroom.
             </p>
 
-            <button className="rf-gold-btn">
-              Know more
-            </button>
-
+            <button className="rf-gold-btn">Know more</button>
           </div>
 
           {/* RIGHT FLOAT CARDS */}
           <div className="col-lg-4 position-relative rf-card-wrapper">
-
             <div className="rf-card rf-card-1">
               <div className="rf-icon green">💼</div>
-              <h5>Skill<br/>Development</h5>
+              <h5>
+                Skill
+                <br />
+                Development
+              </h5>
             </div>
 
             <div className="rf-card rf-card-2">
@@ -47,15 +43,15 @@ function AcademySection() {
 
             <div className="rf-card rf-card-3">
               <div className="rf-icon green">📈</div>
-              <h5>Job<br/>Opportunity</h5>
+              <h5>
+                Job
+                <br />
+                Opportunity
+              </h5>
             </div>
-
           </div>
-
         </div>
-
       </div>
-
     </div>
   );
 }
