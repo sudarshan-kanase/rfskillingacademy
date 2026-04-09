@@ -472,3 +472,34 @@ width:100%;
 height:100%;
 border:0;
 }
+.rf-footer {
+  background: #111;
+}
+
+.footer-link {
+  text-decoration: none;
+  color: #bbb;
+  display: block;
+  margin-bottom: 8px;
+  transition: 0.3s;
+}
+
+.footer-link:hover {
+  color: #0d6efd;
+  padding-left: 6px;
+}
+
+.social-icon {
+  font-size: 20px;
+  transition: 0.3s;
+  text-decoration: none;
+}
+
+.social-icon:hover {
+  transform: scale(1.2);
+}
+
+/* newsletter input */
+.rf-footer input {
+  border-radius: 6px;
+}

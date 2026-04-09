@@ -11,7 +11,6 @@ function Navbar() {
   return (
     <nav className="navbar navbar-expand-lg rf-navbar bg-dark px-4">
       <div className="container-fluid">
-
         {/* LOGO */}
         <img
           src={logo}
@@ -33,7 +32,6 @@ function Navbar() {
         {/* MENU */}
         <div className="collapse navbar-collapse" id="navbarContent">
           <ul className="navbar-nav ms-auto align-items-lg-center">
-
             <li className="nav-item">
               <Link to="/" className={`nav-link text-white ${isActive("/")}`}>
                 Home
@@ -41,7 +39,10 @@ function Navbar() {
             </li>
 
             <li className="nav-item">
-              <Link to="/about" className={`nav-link text-white ${isActive("/about")}`}>
+              <Link
+                to="/about"
+                className={`nav-link text-white ${isActive("/about")}`}
+              >
                 About
               </Link>
             </li>
@@ -93,14 +94,20 @@ function Navbar() {
             </li>
 
             <li className="nav-item">
-              <Link to="/contact" className={`nav-link text-white ${isActive("/contact")}`}>
+              <Link
+                to="/contact"
+                className={`nav-link text-white ${isActive("/contact")}`}
+              >
                 Contact
               </Link>
             </li>
-
           </ul>
 
-          <button className="btn btn-primary ms-lg-3 mt-3 mt-lg-0">
+          <button
+            className="btn btn-primary ms-lg-3 mt-3 mt-lg-0"
+            data-bs-toggle="modal"
+            data-bs-target="#authModal"
+          >
             Login
           </button>
         </div>

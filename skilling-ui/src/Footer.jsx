@@ -1,66 +1,73 @@
+import { Link } from "react-router-dom";
 import logo from "./assets/logo.jpeg";
 
 function Footer() {
   return (
-    <div className="rf-footer">
+    <footer className="rf-footer bg-dark text-light">
 
       <div className="container py-5">
-
         <div className="row">
 
           {/* LEFT */}
           <div className="col-lg-4 mb-4">
+            <img src={logo} alt="logo" style={{ height: "55px" }} />
 
-            <div className="mb-3">
-              <img src={logo} alt="Senseigen" className="rf-footer-logo" />
-            </div>
-
-            <p className="rf-footer-text">
+            <p className="mt-3 text-muted">
               Senseigen helps students grow with real-world skills,
               mentorship, and career opportunities. We focus on
               Exposure, Wisdom, and Support to build future-ready talent.
             </p>
-
           </div>
 
-          {/* LINKS */}
+          {/* QUICK LINKS */}
           <div className="col-lg-4 mb-4">
-            <h5 className="rf-footer-title">IMPORTANT LINKS</h5>
+            <h5 className="fw-bold mb-3">Quick Links</h5>
 
-            <ul className="rf-footer-links">
-              <li>→ Programs</li>
-              <li>→ Impact</li>
-              <li>→ Benefits</li>
-              <li>→ Reach</li>
-              <li>→ Dashboard</li>
-              <li>→ FAQ</li>
+            <ul className="list-unstyled">
+              <li><Link to="/" className="footer-link">Home</Link></li>
+              <li><Link to="/about" className="footer-link">About</Link></li>
+              <li><Link to="/service" className="footer-link">Service</Link></li>
+              <li><Link to="/trading" className="footer-link">Trading</Link></li>
+              <li><Link to="/placement" className="footer-link">Placement</Link></li>
+              <li><Link to="/contact" className="footer-link">Contact</Link></li>
             </ul>
           </div>
 
-          {/* SOCIAL */}
+          {/* NEWSLETTER + SOCIAL */}
           <div className="col-lg-4 mb-4">
-            <h5 className="rf-footer-title">CONNECT WITH US</h5>
+            <h5 className="fw-bold mb-3">Stay Connected</h5>
 
-            <div className="rf-social">
-              <span className="rf-icon fb">f</span>
-              <span className="rf-icon x">x</span>
-              <span className="rf-icon insta">●</span>
-              <span className="rf-icon yt">▶</span>
-              <span className="rf-icon in">in</span>
+            {/* Newsletter */}
+            <form className="d-flex mb-3">
+              <input
+                type="email"
+                placeholder="Enter your email"
+                className="form-control me-2"
+              />
+              <button className="btn btn-primary">Subscribe</button>
+            </form>
+
+            {/* Social */}
+            <div className="d-flex gap-3 mt-3">
+              <a href="#" className="social-icon">📘</a>
+              <a href="#" className="social-icon">🐦</a>
+              <a href="#" className="social-icon">📸</a>
+              <a href="#" className="social-icon">▶️</a>
+              <a href="#" className="social-icon">💼</a>
             </div>
           </div>
 
         </div>
 
-        <p className="text-center mt-4 rf-copy">
-          © 2026 Senseigen. All rights reserved.
-        </p>
-
+        {/* Bottom */}
+        <div className="text-center border-top pt-3 mt-4">
+          <p className="mb-0">
+            © 2026 Senseigen. All rights reserved.
+          </p>
+        </div>
       </div>
 
-      <div className="rf-footer-wave"></div>
-
-    </div>
+    </footer>
   );
 }
 
