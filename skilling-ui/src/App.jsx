@@ -9,16 +9,23 @@ import BottomCarousel from "./BottomCarousel";
 import Footer from "./Footer";
 import Dashboard from "./Dashboard";
 import AuthModal from "./AuthModal";
-import AcademySection from "./AcademySection";
 import Benefits from "./Benefits";
 
-// HOME PAGE COMPONENT
+// 👉 NEW PAGES
+import About from "./About";
+import Service from "./Service";
+import Trading from "./Trading";
+import Placement from "./Placement";
+import Blog from "./Blog";
+import Gallery from "./Gallery";
+import Contact from "./Contact";
+
+
+// ✅ HOME PAGE
 function Home() {
   return (
     <>
-      <Navbar />
       <HeroSlider />
-      <AcademySection />   
       <Programs />
       <Impact />
       <Benefits />
@@ -31,7 +38,7 @@ function Home() {
 }
 
 
-// PROTECTED ROUTE
+// ✅ PROTECTED ROUTE
 function ProtectedRoute({ children }) {
   const user = JSON.parse(localStorage.getItem("user"));
 
@@ -43,15 +50,29 @@ function ProtectedRoute({ children }) {
 }
 
 
+// ✅ APP
 function App() {
   return (
     <BrowserRouter>
+
+      {/* 🔥 Navbar ALL pages वर दिसेल */}
+      <Navbar />
+
       <Routes>
 
         {/* HOME */}
         <Route path="/" element={<Home />} />
 
-        {/* DASHBOARD PROTECTED */}
+        {/* OTHER PAGES */}
+        <Route path="/about" element={<About />} />
+        <Route path="/service" element={<Service />} />
+        <Route path="/trading" element={<Trading />} />
+        <Route path="/placement" element={<Placement />} />
+        <Route path="/blog" element={<Blog />} />
+        <Route path="/gallery" element={<Gallery />} />
+        <Route path="/contact" element={<Contact />} />
+
+        {/* DASHBOARD (PROTECTED) */}
         <Route
           path="/dashboard"
           element={
