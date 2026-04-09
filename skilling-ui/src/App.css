@@ -1,6 +1,66 @@
+/* NAV LINKS */
 .nav-link {
   cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+/* HOVER EFFECT */
+.nav-link:hover {
+  color: #0d6efd !important;
+}
+
+/* ACTIVE LINK */
+.active-link {
+  color: #0d6efd !important;
+  font-weight: 600;
+}
+
+/* UNDERLINE ANIMATION 🔥 */
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 5px;
+  width: 0%;
+  height: 2px;
+  background-color: #0d6efd;
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.active-link::after {
+  width: 100%;
+}
+
+/* DROPDOWN */
+.dropdown-menu {
+  border-radius: 12px;
+  padding: 10px 0;
+  border: none;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* DROPDOWN ITEM */
+.dropdown-item {
+  transition: all 0.3s ease;
+}
+
+.dropdown-item:hover {
+  background-color: #f8f9fa;
+  padding-left: 20px;
+}
+.rf-navbar {
+  background: #111;
+}
+
+.nav-link {
+  position: relative;
   transition: 0.3s;
+  font-weight: 500;
 }
 
 .nav-link:hover {
@@ -9,10 +69,34 @@
 
 .active-link {
   color: #0d6efd !important;
-  font-weight: bold;
+  font-weight: 600;
 }
 
-/* dropdown fix */
+/* underline animation */
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 4px;
+  width: 0%;
+  height: 2px;
+  background: #0d6efd;
+  transition: 0.3s;
+}
+
+.nav-link:hover::after,
+.active-link::after {
+  width: 100%;
+}
+
+/* dropdown */
 .dropdown-menu {
-  border-radius: 10px;
+  border-radius: 12px;
+  border: none;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.dropdown-item:hover {
+  background: #f8f9fa;
+  padding-left: 20px;
 }

@@ -6,7 +6,7 @@ function Trading() {
 
       {/* Heading */}
       <div className="text-center mb-5">
-        <h1 className="fw-bold text-primary">Trading Program</h1>
+        <h1 className="fw-bold text-primary">Training Program</h1>
         <p className="text-muted">
           Learn stock market trading and build a consistent income source.
         </p>
@@ -16,7 +16,7 @@ function Trading() {
       <div className="row align-items-center mb-5">
 
         <div className="col-md-6">
-          <h2 className="fw-bold">Start Your Trading Journey 🚀</h2>
+          <h2 className="fw-bold">Start Your Training Journey 🚀</h2>
           <p>
             We teach you everything from basic concepts to advanced strategies 
             like intraday, swing trading and risk management.
@@ -56,7 +56,7 @@ function Trading() {
 
         <div className="col-md-3 mb-4">
           <div className="card shadow p-3">
-            <h4 className="text-primary">Live Trading</h4>
+            <h4 className="text-primary">Live Training</h4>
             <p>Real-time market practice</p>
           </div>
         </div>
@@ -106,14 +106,14 @@ function Trading() {
           <div className="col-md-4 mb-3">
             <div className="p-3 shadow rounded">
               <h5>Expert Mentors</h5>
-              <p>Learn from experienced traders</p>
+              <p>Learn from experienced Traininrs</p>
             </div>
           </div>
 
           <div className="col-md-4 mb-3">
             <div className="p-3 shadow rounded">
               <h5>Live Practice</h5>
-              <p>Trade in real market conditions</p>
+              <p>Training in real market conditions</p>
             </div>
           </div>
 
@@ -149,7 +149,7 @@ function Trading() {
 
       {/* NEW CTA SECTION */}
       <div className="text-center mt-5 p-4 bg-light rounded shadow">
-        <h3 className="fw-bold">Ready to Start Trading?</h3>
+        <h3 className="fw-bold">Ready to Start Training?</h3>
         <p>Join now and take your first step towards financial freedom.</p>
 
         <button className="btn btn-success mt-2">

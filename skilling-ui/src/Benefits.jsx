@@ -42,7 +42,7 @@ function Benefits() {
     },
     {
       title: "Daily Recorded Sessions",
-      desc: "Daily assignments & internship opportunities provided.",
+      desc: "Daily recorded sessions for better revision.", // 🔥 fix desc
       icon: "🎥",
     },
     {
@@ -64,25 +64,35 @@ function Benefits() {
 
   return (
     <div id="benefits" className="rf-benefits py-5">
-      {" "}
       <div className="container">
-        <h2 className="text-center fw-bold mb-5">
+
+        {/* Heading */}
+        <h2 className="text-center fw-bold mb-5 display-6">
           Unique Benefits & Program Highlights
         </h2>
 
         <div className="row g-4">
           {data.map((item, i) => (
-            <div className="col-md-3" key={i}>
-              <div className="rf-benefit-card text-center">
-                <div className="rf-icon mb-3">{item.icon}</div>
+            <div className="col-lg-3 col-md-4 col-sm-6" key={i}>
+              
+              <div className="rf-benefit-card text-center h-100 p-4 rounded-4 shadow-sm">
 
-                <h6 className="fw-bold">{item.title}</h6>
+                <div className="rf-icon mb-3 fs-2">
+                  {item.icon}
+                </div>
 
-                <p className="small text-muted">{item.desc}</p>
+                <h6 className="fw-bold mb-2">{item.title}</h6>
+
+                <p className="small text-muted mb-0">
+                  {item.desc}
+                </p>
+
               </div>
+
             </div>
           ))}
         </div>
+
       </div>
     </div>
   );

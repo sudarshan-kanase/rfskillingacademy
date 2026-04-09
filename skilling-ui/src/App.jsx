@@ -11,7 +11,7 @@ import Dashboard from "./Dashboard";
 import AuthModal from "./AuthModal";
 import Benefits from "./Benefits";
 
-// 👉 NEW PAGES
+// 👉 PAGES
 import About from "./About";
 import Service from "./Service";
 import Trading from "./Trading";
@@ -32,7 +32,6 @@ function Home() {
       <StateSelect />
       <BottomCarousel />
       <Footer />
-      <AuthModal />
     </>
   );
 }
@@ -42,11 +41,7 @@ function Home() {
 function ProtectedRoute({ children }) {
   const user = JSON.parse(localStorage.getItem("user"));
 
-  if (!user) {
-    return <Navigate to="/" />;
-  }
-
-  return children;
+  return user ? children : <Navigate to="/" />;
 }
 
 
@@ -55,15 +50,18 @@ function App() {
   return (
     <BrowserRouter>
 
-      {/* 🔥 Navbar ALL pages वर दिसेल */}
+      {/* 🔥 Navbar ALL pages वर */}
       <Navbar />
+
+      {/* 🔥 Modal global (IMPORTANT FIX) */}
+      <AuthModal />
 
       <Routes>
 
         {/* HOME */}
         <Route path="/" element={<Home />} />
 
-        {/* OTHER PAGES */}
+        {/* PAGES */}
         <Route path="/about" element={<About />} />
         <Route path="/service" element={<Service />} />
         <Route path="/trading" element={<Trading />} />
@@ -72,7 +70,7 @@ function App() {
         <Route path="/gallery" element={<Gallery />} />
         <Route path="/contact" element={<Contact />} />
 
-        {/* DASHBOARD (PROTECTED) */}
+        {/* DASHBOARD */}
         <Route
           path="/dashboard"
           element={

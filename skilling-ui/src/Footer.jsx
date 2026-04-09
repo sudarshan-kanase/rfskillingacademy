@@ -3,16 +3,16 @@ import logo from "./assets/logo.jpeg";
 
 function Footer() {
   return (
-    <footer className="rf-footer bg-dark text-light">
+    <footer className="rf-footer bg-dark  text-light">
 
       <div className="container py-5">
-        <div className="row">
+        <div className="row g-4">
 
           {/* LEFT */}
-          <div className="col-lg-4 mb-4">
+          <div className="col-lg-4 text-center text-lg-start">
             <img src={logo} alt="logo" style={{ height: "55px" }} />
 
-            <p className="mt-3 text-muted">
+            <p className="mt-3 text-muted small">
               Senseigen helps students grow with real-world skills,
               mentorship, and career opportunities. We focus on
               Exposure, Wisdom, and Support to build future-ready talent.
@@ -20,7 +20,7 @@ function Footer() {
           </div>
 
           {/* QUICK LINKS */}
-          <div className="col-lg-4 mb-4">
+          <div className="col-lg-4 text-center text-lg-start">
             <h5 className="fw-bold mb-3">Quick Links</h5>
 
             <ul className="list-unstyled">
@@ -34,7 +34,7 @@ function Footer() {
           </div>
 
           {/* NEWSLETTER + SOCIAL */}
-          <div className="col-lg-4 mb-4">
+          <div className="col-lg-4 text-center text-lg-start">
             <h5 className="fw-bold mb-3">Stay Connected</h5>
 
             {/* Newsletter */}
@@ -44,11 +44,13 @@ function Footer() {
                 placeholder="Enter your email"
                 className="form-control me-2"
               />
-              <button className="btn btn-primary">Subscribe</button>
+              <button className="btn btn-primary">
+                Subscribe
+              </button>
             </form>
 
             {/* Social */}
-            <div className="d-flex gap-3 mt-3">
+            <div className="d-flex justify-content-center justify-content-lg-start gap-3 mt-3">
               <a href="#" className="social-icon">📘</a>
               <a href="#" className="social-icon">🐦</a>
               <a href="#" className="social-icon">📸</a>
@@ -61,10 +63,11 @@ function Footer() {
 
         {/* Bottom */}
         <div className="text-center border-top pt-3 mt-4">
-          <p className="mb-0">
+          <p className="mb-0 small text-muted">
             © 2026 Senseigen. All rights reserved.
           </p>
         </div>
+
       </div>
 
     </footer>

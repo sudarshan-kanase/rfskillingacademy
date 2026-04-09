@@ -1,79 +1,62 @@
 import React from "react";
 
 function Service() {
+
+  const services = [
+    {
+      title: "Trading Course",
+      desc: "Learn stock market trading from basics to advanced with live sessions.",
+    },
+    {
+      title: "Placement Training",
+      desc: "Get ready for interviews with our professional placement programs.",
+    },
+    {
+      title: "Web Development",
+      desc: "Learn HTML, CSS, React and build real-world projects.",
+    },
+    {
+      title: "Internship",
+      desc: "Gain real industry experience with our internship programs.",
+    },
+    {
+      title: "Career Guidance",
+      desc: "Get expert advice to choose the right career path.",
+    },
+    {
+      title: "Live Projects",
+      desc: "Work on real projects and boost your portfolio.",
+    },
+  ];
+
   return (
     <div className="container py-5">
 
       {/* Heading */}
       <div className="text-center mb-5">
-        <h1 className="fw-bold text-primary">Our Services</h1>
-        <p className="text-muted">
+        <h1 className="fw-bold text-primary display-5">Our Services</h1>
+        <p className="text-muted fs-5">
           We provide high-quality services to help you grow your skills and career.
         </p>
       </div>
 
-      {/* Services Cards */}
-      <div className="row">
+      {/* Cards */}
+      <div className="row g-4">
+        {services.map((item, i) => (
+          <div className="col-lg-4 col-md-6" key={i}>
+            
+            <div className="card h-100 text-center p-4 shadow-sm border-0 rounded-4 hoverCard">
 
-        <div className="col-md-4 mb-4">
-          <div className="card shadow h-100 text-center p-3">
-            <h4 className="fw-bold">Trading Course</h4>
-            <p>
-              Learn stock market trading from basics to advanced with live sessions.
-            </p>
+              <h5 className="fw-bold mb-2">{item.title}</h5>
+
+              <p className="text-muted small mb-0">
+                {item.desc}
+              </p>
+
+            </div>
+
           </div>
-        </div>
-
-        <div className="col-md-4 mb-4">
-          <div className="card shadow h-100 text-center p-3">
-            <h4 className="fw-bold">Placement Training</h4>
-            <p>
-              Get ready for interviews with our professional placement programs.
-            </p>
-          </div>
-        </div>
-
-        <div className="col-md-4 mb-4">
-          <div className="card shadow h-100 text-center p-3">
-            <h4 className="fw-bold">Web Development</h4>
-            <p>
-              Learn HTML, CSS, React and build real-world projects.
-            </p>
-          </div>
-        </div>
-
-      </div>
-
-      {/* Extra Row */}
-      <div className="row mt-4">
-
-        <div className="col-md-4 mb-4">
-          <div className="card shadow h-100 text-center p-3">
-            <h4 className="fw-bold">Internship</h4>
-            <p>
-              Gain real industry experience with our internship programs.
-            </p>
-          </div>
-        </div>
-
-        <div className="col-md-4 mb-4">
-          <div className="card shadow h-100 text-center p-3">
-            <h4 className="fw-bold">Career Guidance</h4>
-            <p>
-              Get expert advice to choose the right career path.
-            </p>
-          </div>
-        </div>
-
-        <div className="col-md-4 mb-4">
-          <div className="card shadow h-100 text-center p-3">
-            <h4 className="fw-bold">Live Projects</h4>
-            <p>
-              Work on real projects and boost your portfolio.
-            </p>
-          </div>
-        </div>
-
+        ))}
       </div>
 
     </div>

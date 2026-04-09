@@ -15,23 +15,28 @@ function Gallery() {
 
       {/* Heading */}
       <div className="text-center mb-5">
-        <h1 className="fw-bold text-primary">Gallery</h1>
-        <p className="text-muted">
+        <h1 className="fw-bold text-primary display-5">Gallery</h1>
+        <p className="text-muted fs-5">
           Explore our events, training sessions and achievements.
         </p>
       </div>
 
-      {/* Image Grid */}
-      <div className="row">
+      {/* Grid */}
+      <div className="row g-4">
         {images.map((img, index) => (
-          <div className="col-md-4 col-sm-6 mb-4" key={index}>
-            <div className="gallery-card">
+          <div className="col-lg-4 col-md-6" key={index}>
+            
+            <div className="gallery-card overflow-hidden rounded-4 shadow-sm">
+
               <img
                 src={img}
                 alt="gallery"
-                className="img-fluid rounded shadow"
+                className="img-fluid w-100"
+                style={{ height: "250px", objectFit: "cover" }}
               />
+
             </div>
+
           </div>
         ))}
       </div>

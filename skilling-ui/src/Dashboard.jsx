@@ -14,59 +14,69 @@ function Dashboard() {
     window.location.href = "/";
   };
 
-  if (!user) return <h3 className="text-center mt-5">Loading...</h3>;
+  if (!user)
+    return <h4 className="text-center mt-5 text-muted">Loading...</h4>;
 
   return (
-    <div className="container mt-5 text-center">
+    <div className="container py-5 text-center">
 
-      <h2 className="fw-bold">
-        Welcome {user.name}
-      </h2>
+      {/* HEADER */}
+      <div className="mb-4">
+        <h2 className="fw-bold">
+          Welcome, <span className="text-primary">{user.name || user.firstName}</span>
+        </h2>
 
-      <h4 className="mt-3 text-success">
-        Role: {user.role}
-      </h4>
+        <h5 className="mt-2 text-success">
+          Role: {user.role}
+        </h5>
+      </div>
 
       {/* ROLE UI */}
-      {user.role === "student" && (
-        <div className="mt-4">
-          <button className="btn btn-primary m-2">
-            View Courses
-          </button>
+      <div className="mt-4">
 
-          <button className="btn btn-warning m-2">
-            Apply Jobs
-          </button>
-        </div>
-      )}
+        {user.role === "student" && (
+          <div className="d-flex justify-content-center flex-wrap gap-3">
+            <button className="btn btn-primary px-4">
+              View Courses
+            </button>
 
-      {user.role === "mentor" && (
-        <div className="mt-4">
-          <button className="btn btn-success m-2">
-            Mentor Requests
-          </button>
+            <button className="btn btn-warning px-4">
+              Apply Jobs
+            </button>
+          </div>
+        )}
 
-          <button className="btn btn-dark m-2">
-            Add Session
-          </button>
-        </div>
-      )}
+        {user.role === "mentor" && (
+          <div className="d-flex justify-content-center flex-wrap gap-3">
+            <button className="btn btn-success px-4">
+              Mentor Requests
+            </button>
 
-      {user.role === "admin" && (
-        <div className="mt-4">
-          <button className="btn btn-danger m-2">
-            Manage Users
-          </button>
+            <button className="btn btn-dark px-4">
+              Add Session
+            </button>
+          </div>
+        )}
 
-          <button className="btn btn-secondary m-2">
-            Add Courses
-          </button>
-        </div>
-      )}
+        {user.role === "admin" && (
+          <div className="d-flex justify-content-center flex-wrap gap-3">
+            <button className="btn btn-danger px-4">
+              Manage Users
+            </button>
 
-      <br />
+            <button className="btn btn-secondary px-4">
+              Add Courses
+            </button>
+          </div>
+        )}
 
-      <button className="btn btn-outline-danger mt-4" onClick={logout}>
+      </div>
+
+      {/* LOGOUT */}
+      <button
+        className="btn btn-outline-danger mt-5 px-4"
+        onClick={logout}
+      >
         Logout
       </button>
 

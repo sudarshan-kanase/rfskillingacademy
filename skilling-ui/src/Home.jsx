@@ -1,53 +1,55 @@
+import HeroSlider from "./HeroSlider";
+import About from "./About";
+import Service from "./Service";
+import Trading from "./Trading";
+import Placement from "./Placement";
+import Programs from "./Programs";
+import Blog from "./Blog";
+import Gallery from "./Gallery";
+import Contact from "./Contact";
+
 function Home() {
   return (
     <div>
 
-      <section id="home" style={sectionStyle}>
-        <h1>Home Section</h1>
+      <section id="home">
+        <HeroSlider />
       </section>
 
-      <section id="about" style={sectionStyle}>
-        <h1>About Section</h1>
+      <section id="about" className="py-5">
+        <About />
       </section>
 
-      <section id="service" style={sectionStyle}>
-        <h1>Service Section</h1>
+      <section id="service" className="py-5">
+        <Service />
       </section>
 
-      <section id="trading" style={sectionStyle}>
-        <h1>Trading Section</h1>
+      <section id="trading" className="py-5">
+        <Trading />
       </section>
 
-      <section id="placement" style={sectionStyle}>
-        <h1>Placement Section</h1>
+      <section id="placement" className="py-5">
+        <Placement />
       </section>
 
-      <section id="program" style={sectionStyle}>
-        <h1>Program Section</h1>
+      <section id="program" className="py-5">
+        <Programs />
       </section>
 
-      <section id="blog" style={sectionStyle}>
-        <h1>Blog Section</h1>
+      <section id="blog" className="py-5">
+        <Blog />
       </section>
 
-      <section id="gallery" style={sectionStyle}>
-        <h1>Gallery Section</h1>
+      <section id="gallery" className="py-5">
+        <Gallery />
       </section>
 
-      <section id="contact" style={sectionStyle}>
-        <h1>Contact Section</h1>
+      <section id="contact" className="py-5">
+        <Contact />
       </section>
 
     </div>
   );
 }
-
-const sectionStyle = {
-  height: "100vh",
-  display: "flex",
-  justifyContent: "center",
-  alignItems: "center",
-  borderBottom: "1px solid #ccc",
-};
 
 export default Home;
