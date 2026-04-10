@@ -219,3 +219,72 @@
   background: #f8f9fa;
   padding-left: 20px;
 }
+/* NAVBAR TEXT FIX */
+.navbar .nav-link,
+.navbar .navbar-brand,
+.navbar .dropdown-toggle {
+  color: #fff !important;
+}
+
+/* DROPDOWN ITEMS */
+.dropdown-menu .dropdown-item {
+  color: #000 !important;
+}
+
+.dropdown-menu .dropdown-item:hover {
+  color: #0d6efd !important;
+}
+
+/* FOOTER TEXT FIX */
+.rf-footer,
+.rf-footer p,
+.rf-footer h5,
+.rf-footer li,
+.rf-footer a {
+  color: #fff !important;
+}
+
+/* FOOTER LINKS */
+.footer-link {
+  color: #ccc !important;
+}
+
+.footer-link:hover {
+  color: #0d6efd !important;
+}
+
+/* SOCIAL ICON */
+.social-icon {
+  color: #fff;
+}
+/* MOBILE MENU BACKGROUND FIX */
+.navbar-collapse {
+  background: #111; /* dark background */
+  padding: 15px;
+  border-radius: 10px;
+}
+
+/* MOBILE MENU TEXT */
+.navbar-collapse .nav-link {
+  color: #fff !important;
+  padding: 10px 0;
+}
+
+/* DROPDOWN TEXT */
+.navbar-collapse .dropdown-item {
+  color: #000 !important;
+}
+
+/* LOGIN BUTTON FIX */
+.navbar-collapse .btn {
+  width: 100%;
+}
+/* TOGGLER BORDER WHITE */
+.navbar-toggler {
+  border: 2px solid #fff !important;
+}
+
+/* TOGGLER ICON WHITE */
+.navbar-toggler-icon {
+  filter: invert(1);
+}
