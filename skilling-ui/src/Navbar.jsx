@@ -1,9 +1,8 @@
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation ,useNavigate} from "react-router-dom";
 import logo from "./assets/logo.jpeg";
-
 function Navbar() {
   const location = useLocation();
-
+const navigate = useNavigate();
   const isActive = (path) => (location.pathname === path ? "active-link" : "");
 
   return (
@@ -106,7 +105,7 @@ function Navbar() {
           {/* ✅ LOGIN BUTTON */}
           <button
             className="btn btn-primary ms-lg-3 mt-3 mt-lg-0 px-3 rounded-pill shadow-sm"
-            // eslint-disable-next-line no-undef
+            
             onClick={() => navigate("/login")}
           >
             Login

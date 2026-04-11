@@ -48,6 +48,7 @@ function Login() {
       <h2 className="mb-4 fw-bold text-primary">Login</h2>
 
       <div className="col-md-4 mx-auto shadow p-4 rounded-4">
+
         <input
           name="email"
           onChange={handleChange}
@@ -63,20 +64,24 @@ function Login() {
           placeholder="Password"
         />
 
-        <button className="btn btn-primary w-100" onClick={handleLogin}>
+        <button
+          className="btn btn-primary w-100"
+          onClick={handleLogin}
+        >
           Login
         </button>
 
+        {/* 🔥 CLEAN REGISTER LINK */}
         <p className="mt-3">
-          Don't have account?{" "}
+          Don't have an account?{" "}
           <span
             style={{ color: "blue", cursor: "pointer" }}
-            data-bs-toggle="modal"
-            data-bs-target="#authModal"
+            onClick={() => navigate("/register")}
           >
             Register
           </span>
         </p>
+
       </div>
     </div>
   );

@@ -16,8 +16,9 @@ import Placement from "./Placement";
 import Blog from "./Blog";
 import Gallery from "./Gallery";
 import Contact from "./Contact";
-import Rrgister from "./Rrgister";
+import Register from "./Register"; // ✅ FIXED
 import Login from "./Login";
+
 
 // ✅ HOME PAGE
 function Home() {
@@ -29,47 +30,44 @@ function Home() {
       <Benefits />
       <StateSelect />
       <BottomCarousel />
-      <Footer />
-      <Rrgister/>
     </>
   );
 }
-
 
 // ✅ PROTECTED ROUTE
 function ProtectedRoute({ children }) {
   const user = JSON.parse(localStorage.getItem("user"));
 
-  return user ? children : <Navigate to="/" />;
+  return user ? children : <Navigate to="/login" />;
 }
-
 
 // ✅ APP
 function App() {
   return (
     <BrowserRouter>
 
-      {/* 🔥 Navbar ALL pages वर */}
+      {/* 🔥 Navbar */}
       <Navbar />
-
-      {/* 🔥 Modal global (IMPORTANT FIX) */}
 
       <Routes>
 
         {/* HOME */}
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<><Home /><Footer /></>} />
+
+        {/* LOGIN */}
+        <Route path="/login" element={<Login />} />
+
+        {/* REGISTER */}
+        <Route path="/register" element={<Register />} />
 
         {/* PAGES */}
-        <Route path="/about" element={<About />} />
-        <Route path="/service" element={<Service />} />
-        <Route path="/trading" element={<Trading />} />
-        <Route path="/placement" element={<Placement />} />
-        <Route path="/blog" element={<Blog />} />
-        <Route path="/gallery" element={<Gallery />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/login" element={<Login />} />
-      
-
+        <Route path="/about" element={<><About /><Footer /></>} />
+        <Route path="/service" element={<><Service /><Footer /></>} />
+        <Route path="/trading" element={<><Trading /><Footer /></>} />
+        <Route path="/placement" element={<><Placement /><Footer /></>} />
+        <Route path="/blog" element={<><Blog /><Footer /></>} />
+        <Route path="/gallery" element={<><Gallery /><Footer /></>} />
+        <Route path="/contact" element={<><Contact /><Footer /></>} />
 
         {/* DASHBOARD */}
         <Route
@@ -82,6 +80,7 @@ function App() {
         />
 
       </Routes>
+
     </BrowserRouter>
   );
 }
