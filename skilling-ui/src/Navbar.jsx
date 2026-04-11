@@ -1,8 +1,8 @@
-import { Link, useLocation ,useNavigate} from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import logo from "./assets/logo.jpeg";
 function Navbar() {
   const location = useLocation();
-const navigate = useNavigate();
+  const navigate = useNavigate();
   const isActive = (path) => (location.pathname === path ? "active-link" : "");
 
   return (
@@ -101,16 +101,15 @@ const navigate = useNavigate();
             </li>
           </ul>
           {/* LOGIN BUTTON */}
-         
-          {/* ✅ LOGIN BUTTON */}
-          <button
-            className="btn btn-primary ms-lg-3 mt-3 mt-lg-0 px-3 rounded-pill shadow-sm"
-            
-            onClick={() => navigate("/login")}
-          >
-            Login
-          </button>
-          );
+          <div className="ms-auto d-flex align-items-center">
+            <button
+              className="btn btn-primary px-4 rounded-pill shadow-sm"
+              style={{ whiteSpace: "nowrap" }}
+              onClick={() => navigate("/login")}
+            >
+              Login
+            </button>
+          </div>
         </div>
       </div>
     </nav>
