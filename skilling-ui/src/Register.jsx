@@ -212,7 +212,7 @@ function Register() {
         <div className="d-flex gap-2 mt-3">
           <button
             className="btn btn-secondary w-50"
-            onClick={() => navigate("/login")}
+            onClick={() => navigate("/")}
           >
             Cancel
           </button>

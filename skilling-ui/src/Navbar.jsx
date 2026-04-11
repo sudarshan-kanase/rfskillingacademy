@@ -31,7 +31,7 @@ function Navbar() {
         <div className="collapse navbar-collapse" id="navMenu">
           <ul className="navbar-nav ms-auto align-items-lg-center gap-lg-2">
             <li className="nav-item">
-              <Link to="/" className={`nav-link text-white ${isActive("/")}`}>
+              <Link to="/Home" className={`nav-link text-white ${isActive("/Home")}`}>
                 Home
               </Link>
             </li>
@@ -105,7 +105,7 @@ function Navbar() {
             <button
               className="btn btn-primary px-4 rounded-pill shadow-sm"
               style={{ whiteSpace: "nowrap" }}
-              onClick={() => navigate("/login")}
+              onClick={() => navigate("/")}
             >
               Login
             </button>

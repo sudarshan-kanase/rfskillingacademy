@@ -52,10 +52,10 @@ function App() {
       <Routes>
 
         {/* HOME */}
-        <Route path="/" element={<><Home /><Footer /></>} />
+        <Route path="/Home" element={<><Home /><Footer /></>} />
 
         {/* LOGIN */}
-        <Route path="/login" element={<Login />} />
+        <Route path="/" element={<Login />} />
 
         {/* REGISTER */}
         <Route path="/register" element={<Register />} />
