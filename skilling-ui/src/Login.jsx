@@ -13,35 +13,6 @@ function Login() {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleLogin = async () => {
-    if (!form.email || !form.password) {
-      alert("Enter email & password ❗");
-      return;
-    }
-
-    try {
-      const res = await fetch("http://localhost:5000/login", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(form),
-      });
-
-      const data = await res.json();
-
-      if (data.success) {
-        localStorage.setItem("user", JSON.stringify(data.user));
-        alert("Login Successful ✅");
-        navigate("/dashboard");
-      } else {
-        alert("Invalid credentials ❌");
-      }
-    } catch (err) {
-      console.log(err);
-      alert("Server Error ❌");
-    }
-  };
 
   return (
     <div className="container py-5 text-center">
@@ -66,7 +37,7 @@ function Login() {
 
         <button
           className="btn btn-primary w-100"
-          onClick={handleLogin}
+            onClick={() => navigate("/Home")}
         >
           Login
         </button>

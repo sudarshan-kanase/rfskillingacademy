@@ -46,6 +46,7 @@ function Register() {
 
       if (data.success) {
         alert("Registered Successfully ✅");
+          navigate("/login"); 
       } else {
         alert("Error ❌");
       }

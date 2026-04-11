@@ -1,6 +1,7 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import logo from "./assets/logo.jpeg";
 function Navbar() {
+  const user = JSON.parse(localStorage.getItem("user"));
   const location = useLocation();
   const navigate = useNavigate();
   const isActive = (path) => (location.pathname === path ? "active-link" : "");
@@ -31,7 +32,10 @@ function Navbar() {
         <div className="collapse navbar-collapse" id="navMenu">
           <ul className="navbar-nav ms-auto align-items-lg-center gap-lg-2">
             <li className="nav-item">
-              <Link to="/Home" className={`nav-link text-white ${isActive("/Home")}`}>
+              <Link
+                to="/Home"
+                className={`nav-link text-white ${isActive("/Home")}`}
+              >
                 Home
               </Link>
             </li>
@@ -100,15 +104,22 @@ function Navbar() {
               </Link>
             </li>
           </ul>
-          {/* LOGIN BUTTON */}
           <div className="ms-auto d-flex align-items-center">
-            <button
-              className="btn btn-primary px-4 rounded-pill shadow-sm"
-              style={{ whiteSpace: "nowrap" }}
-              onClick={() => navigate("/")}
-            >
-              Login
-            </button>
+            {user ? (
+              <button
+                className="btn btn-success px-3 rounded-pill"
+                onClick={() => navigate("/profile")}
+              >
+                {user.first_name}
+              </button>
+            ) : (
+              <button
+                className="btn btn-primary px-3 rounded-pill"
+                onClick={() => navigate("/")}
+              >
+                Login
+              </button>
+            )}
           </div>
         </div>
       </div>

@@ -16,12 +16,16 @@ import Placement from "./Placement";
 import Blog from "./Blog";
 import Gallery from "./Gallery";
 import Contact from "./Contact";
-import Register from "./Register"; // ✅ FIXED
+import Register from "./Register";
+import Profile from "./Profile";
 import Login from "./Login";
-
 
 // ✅ HOME PAGE
 function Home() {
+  function ProtectedRoute({ children }) {
+    const user = JSON.parse(localStorage.getItem("user"));
+    return user ? children : <Navigate to="/login" />;
+  }
   return (
     <>
       <HeroSlider />
@@ -45,30 +49,88 @@ function ProtectedRoute({ children }) {
 function App() {
   return (
     <BrowserRouter>
-
       {/* 🔥 Navbar */}
       <Navbar />
 
       <Routes>
-
         {/* HOME */}
-        <Route path="/Home" element={<><Home /><Footer /></>} />
-
+        <Route
+          path="/Home"
+          element={
+            <>
+              <Home />
+              <Footer />
+            </>
+          }
+        />
         {/* LOGIN */}
         <Route path="/" element={<Login />} />
-
         {/* REGISTER */}
         <Route path="/register" element={<Register />} />
-
         {/* PAGES */}
-        <Route path="/about" element={<><About /><Footer /></>} />
-        <Route path="/service" element={<><Service /><Footer /></>} />
-        <Route path="/trading" element={<><Trading /><Footer /></>} />
-        <Route path="/placement" element={<><Placement /><Footer /></>} />
-        <Route path="/blog" element={<><Blog /><Footer /></>} />
-        <Route path="/gallery" element={<><Gallery /><Footer /></>} />
-        <Route path="/contact" element={<><Contact /><Footer /></>} />
-
+        <Route
+          path="/about"
+          element={
+            <>
+              <About />
+              <Footer />
+            </>
+          }
+        />
+        <Route
+          path="/service"
+          element={
+            <>
+              <Service />
+              <Footer />
+            </>
+          }
+        />
+        <Route
+          path="/trading"
+          element={
+            <>
+              <Trading />
+              <Footer />
+            </>
+          }
+        />
+        <Route
+          path="/placement"
+          element={
+            <>
+              <Placement />
+              <Footer />
+            </>
+          }
+        />
+        <Route
+          path="/blog"
+          element={
+            <>
+              <Blog />
+              <Footer />
+            </>
+          }
+        />
+        <Route
+          path="/gallery"
+          element={
+            <>
+              <Gallery />
+              <Footer />
+            </>
+          }
+        />
+        <Route
+          path="/contact"
+          element={
+            <>
+              <Contact />
+              <Footer />
+            </>
+          }
+        />
         {/* DASHBOARD */}
         <Route
           path="/dashboard"
@@ -78,9 +140,17 @@ function App() {
             </ProtectedRoute>
           }
         />
+        <Route
+          path="/dashboard"
+          element={
+            <ProtectedRoute>
+              <Dashboard />
+            </ProtectedRoute>
+          }
+        />
 
+        <Route path="/profile" element={<Profile />} />
       </Routes>
-
     </BrowserRouter>
   );
 }
