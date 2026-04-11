@@ -155,6 +155,15 @@ function Register() {
               placeholder="PIN Code"
             />
           </div>
+          <div className="col-md-6 mb-2">
+            <input
+              type="password"
+              name="password"
+              onChange={handleChange}
+              className="form-control"
+              placeholder="Password"
+            />
+          </div>
         </div>
 
         {/* STUDENT */}
@@ -195,19 +204,6 @@ function Register() {
               onChange={handleChange}
               className="form-control mb-2"
               placeholder="Experience"
-            />
-          </>
-        )}
-
-        {/* ADMIN */}
-        {role === "Admin" && (
-          <>
-            <input
-              name="password"
-              type="password"
-              onChange={handleChange}
-              className="form-control mb-2"
-              placeholder="Password"
             />
           </>
         )}
