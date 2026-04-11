@@ -1,14 +1,8 @@
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
 import Navbar from "./Navbar";
-import HeroSlider from "./HeroSlider";
-import Programs from "./Programs";
-import Impact from "./Impact";
-import StateSelect from "./StateSelect";
-import BottomCarousel from "./BottomCarousel";
 import Footer from "./Footer";
 import Dashboard from "./Dashboard";
-import Benefits from "./Benefits";
 import About from "./About";
 import Service from "./Service";
 import Trading from "./Trading";
@@ -19,13 +13,15 @@ import Contact from "./Contact";
 import Register from "./Register";
 import Profile from "./Profile";
 import Login from "./Login";
+import HeroSlider from "./HeroSlider";
+import Programs from "./Programs";
+import Impact from "./Impact";
+import StateSelect from "./StateSelect";
+import BottomCarousel from "./BottomCarousel";
+import Benefits from "./Benefits";
 
-// ✅ HOME PAGE
+// ✅ HOME
 function Home() {
-  function ProtectedRoute({ children }) {
-    const user = JSON.parse(localStorage.getItem("user"));
-    return user ? children : <Navigate to="/login" />;
-  }
   return (
     <>
       <HeroSlider />
@@ -38,24 +34,30 @@ function Home() {
   );
 }
 
-// ✅ PROTECTED ROUTE
+// ✅ PROTECTED
 function ProtectedRoute({ children }) {
   const user = JSON.parse(localStorage.getItem("user"));
-
   return user ? children : <Navigate to="/login" />;
 }
 
-// ✅ APP
 function App() {
   return (
     <BrowserRouter>
-      {/* 🔥 Navbar */}
+
       <Navbar />
 
       <Routes>
+
+        {/* LOGIN DEFAULT */}
+        <Route path="/" element={<Login />} />
+        <Route path="/login" element={<Login />} />
+
+        {/* REGISTER */}
+        <Route path="/register" element={<Register />} />
+
         {/* HOME */}
         <Route
-          path="/Home"
+          path="/home"
           element={
             <>
               <Home />
@@ -63,74 +65,16 @@ function App() {
             </>
           }
         />
-        {/* LOGIN */}
-        <Route path="/" element={<Login />} />
-        {/* REGISTER */}
-        <Route path="/register" element={<Register />} />
+
         {/* PAGES */}
-        <Route
-          path="/about"
-          element={
-            <>
-              <About />
-              <Footer />
-            </>
-          }
-        />
-        <Route
-          path="/service"
-          element={
-            <>
-              <Service />
-              <Footer />
-            </>
-          }
-        />
-        <Route
-          path="/trading"
-          element={
-            <>
-              <Trading />
-              <Footer />
-            </>
-          }
-        />
-        <Route
-          path="/placement"
-          element={
-            <>
-              <Placement />
-              <Footer />
-            </>
-          }
-        />
-        <Route
-          path="/blog"
-          element={
-            <>
-              <Blog />
-              <Footer />
-            </>
-          }
-        />
-        <Route
-          path="/gallery"
-          element={
-            <>
-              <Gallery />
-              <Footer />
-            </>
-          }
-        />
-        <Route
-          path="/contact"
-          element={
-            <>
-              <Contact />
-              <Footer />
-            </>
-          }
-        />
+        <Route path="/about" element={<><About /><Footer /></>} />
+        <Route path="/service" element={<><Service /><Footer /></>} />
+        <Route path="/trading" element={<><Trading /><Footer /></>} />
+        <Route path="/placement" element={<><Placement /><Footer /></>} />
+        <Route path="/blog" element={<><Blog /><Footer /></>} />
+        <Route path="/gallery" element={<><Gallery /><Footer /></>} />
+        <Route path="/contact" element={<><Contact /><Footer /></>} />
+
         {/* DASHBOARD */}
         <Route
           path="/dashboard"
@@ -140,17 +84,19 @@ function App() {
             </ProtectedRoute>
           }
         />
+
+        {/* PROFILE (protected 🔥) */}
         <Route
-          path="/dashboard"
+          path="/profile"
           element={
             <ProtectedRoute>
-              <Dashboard />
+              <Profile />
             </ProtectedRoute>
           }
         />
 
-        <Route path="/profile" element={<Profile />} />
       </Routes>
+
     </BrowserRouter>
   );
 }

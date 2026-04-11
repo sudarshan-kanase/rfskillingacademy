@@ -46,25 +46,28 @@ function Register() {
 
       if (data.success) {
         alert("Registered Successfully ✅");
-          navigate("/login"); 
+        navigate("/login");
       } else {
-        alert("Error ❌");
+        alert(data.message || "Error ❌");
       }
 
-      // eslint-disable-next-line no-unused-vars
+    // eslint-disable-next-line no-unused-vars
     } catch (err) {
       alert("Server Error ❌");
     }
   };
 
   return (
-    <div className="container py-5">
-      <div className="col-md-8 mx-auto shadow p-4 rounded-4">
-        <h4 className="text-center mb-3">Create Account</h4>
+    <div className="container d-flex justify-content-center py-5">
+      <div className="col-md-10 shadow p-4 rounded-4 bg-white">
+
+        <h4 className="text-center mb-4 fw-bold text-success">
+          Create Account
+        </h4>
 
         {/* ROLE */}
         <select
-          className="form-control mb-3"
+          className="form-control mb-4 rounded-pill"
           value={role}
           onChange={(e) => setRole(e.target.value)}
         >
@@ -75,153 +78,87 @@ function Register() {
 
         {/* COMMON */}
         <div className="row">
-          <div className="col-md-6 mb-2">
-            <input
-              name="firstName"
-              onChange={handleChange}
-              className="form-control"
-              placeholder="First Name"
-            />
-          </div>
-          <div className="col-md-6 mb-2">
-            <input
-              name="lastName"
-              onChange={handleChange}
-              className="form-control"
-              placeholder="Last Name"
-            />
+
+          <div className="col-md-6 mb-3">
+            <input name="firstName" value={form.firstName} onChange={handleChange} className="form-control rounded-pill" placeholder="First Name" />
           </div>
 
-          <div className="col-md-6 mb-2">
-            <input
-              name="email"
-              onChange={handleChange}
-              className="form-control"
-              placeholder="Email"
-            />
-          </div>
-          <div className="col-md-6 mb-2">
-            <input
-              name="mobile"
-              onChange={handleChange}
-              className="form-control"
-              placeholder="Mobile"
-            />
+          <div className="col-md-6 mb-3">
+            <input name="lastName" value={form.lastName} onChange={handleChange} className="form-control rounded-pill" placeholder="Last Name" />
           </div>
 
-          <div className="col-md-6 mb-2">
-            <input
-              type="date"
-              name="dob"
-              onChange={handleChange}
-              className="form-control"
-            />
+          <div className="col-md-6 mb-3">
+            <input name="email" value={form.email} onChange={handleChange} className="form-control rounded-pill" placeholder="Email" />
           </div>
 
-          <div className="col-md-6 mb-2">
-            <select
-              name="gender"
-              onChange={handleChange}
-              className="form-control"
-            >
+          <div className="col-md-6 mb-3">
+            <input name="mobile" value={form.mobile} onChange={handleChange} className="form-control rounded-pill" placeholder="Mobile" />
+          </div>
+
+          <div className="col-md-6 mb-3">
+            <input type="date" name="dob" value={form.dob} onChange={handleChange} className="form-control rounded-pill" />
+          </div>
+
+          <div className="col-md-6 mb-3">
+            <select name="gender" value={form.gender} onChange={handleChange} className="form-control rounded-pill">
               <option value="">Gender</option>
               <option>Male</option>
               <option>Female</option>
             </select>
           </div>
 
-          <div className="col-md-6 mb-2">
-            <input
-              name="state"
-              onChange={handleChange}
-              className="form-control"
-              placeholder="State"
-            />
+          <div className="col-md-6 mb-3">
+            <input name="state" value={form.state} onChange={handleChange} className="form-control rounded-pill" placeholder="State" />
           </div>
 
-          <div className="col-md-6 mb-2">
-            <input
-              name="district"
-              onChange={handleChange}
-              className="form-control"
-              placeholder="District"
-            />
+          <div className="col-md-6 mb-3">
+            <input name="district" value={form.district} onChange={handleChange} className="form-control rounded-pill" placeholder="District" />
           </div>
 
-          <div className="col-md-6 mb-2">
-            <input
-              name="pin"
-              onChange={handleChange}
-              className="form-control"
-              placeholder="PIN Code"
-            />
+          <div className="col-md-6 mb-3">
+            <input name="pin" value={form.pin} onChange={handleChange} className="form-control rounded-pill" placeholder="PIN Code" />
           </div>
-          <div className="col-md-6 mb-2">
-            <input
-              type="password"
-              name="password"
-              onChange={handleChange}
-              className="form-control"
-              placeholder="Password"
-            />
+
+          <div className="col-md-6 mb-3">
+            <input type="password" name="password" value={form.password} onChange={handleChange} className="form-control rounded-pill" placeholder="Password" />
           </div>
+
         </div>
 
         {/* STUDENT */}
         {role === "Student" && (
           <>
-            <input
-              name="college"
-              onChange={handleChange}
-              className="form-control mb-2"
-              placeholder="College Name"
-            />
-            <input
-              name="purpose"
-              onChange={handleChange}
-              className="form-control mb-2"
-              placeholder="Purpose"
-            />
+            <input name="college" value={form.college} onChange={handleChange} className="form-control mb-2 rounded-pill" placeholder="College Name" />
+            <input name="purpose" value={form.purpose} onChange={handleChange} className="form-control mb-3 rounded-pill" placeholder="Purpose" />
           </>
         )}
 
         {/* MENTOR */}
         {role === "Mentor" && (
           <>
-            <input
-              name="qualification"
-              onChange={handleChange}
-              className="form-control mb-2"
-              placeholder="Qualification"
-            />
-            <input
-              name="profession"
-              onChange={handleChange}
-              className="form-control mb-2"
-              placeholder="Profession"
-            />
-            <input
-              name="experience"
-              onChange={handleChange}
-              className="form-control mb-2"
-              placeholder="Experience"
-            />
+            <input name="qualification" value={form.qualification} onChange={handleChange} className="form-control mb-2 rounded-pill" placeholder="Qualification" />
+            <input name="profession" value={form.profession} onChange={handleChange} className="form-control mb-2 rounded-pill" placeholder="Profession" />
+            <input name="experience" value={form.experience} onChange={handleChange} className="form-control mb-3 rounded-pill" placeholder="Experience" />
           </>
         )}
 
         {/* BUTTONS */}
-        <div className="d-flex gap-2 mt-3">
+        <div className="d-flex gap-3 mt-4">
           <button
-            className="btn btn-secondary w-50"
-            onClick={() => navigate("/")}
+            className="btn btn-outline-secondary w-50 rounded-pill"
+            onClick={() => navigate("/login")}
           >
             Cancel
           </button>
 
-          <button className="btn btn-success w-50" onClick={handleRegister}>
+          <button
+            className="btn btn-success w-50 rounded-pill"
+            onClick={handleRegister}
+          >
             Register
           </button>
         </div>
+
       </div>
     </div>
   );

@@ -1,16 +1,25 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import logo from "./assets/logo.jpeg";
+
 function Navbar() {
   const user = JSON.parse(localStorage.getItem("user"));
   const location = useLocation();
   const navigate = useNavigate();
-  const isActive = (path) => (location.pathname === path ? "active-link" : "");
+
+  const isActive = (path) =>
+    location.pathname === path ? "active-link" : "";
+
+  const handleLogout = () => {
+    localStorage.removeItem("user");
+    navigate("/login");
+  };
 
   return (
-    <nav className="navbar navbar-expand-lg bg-dark rf-navbar px-3 px-lg-4 shadow-sm">
+    <nav className="navbar navbar-expand-lg bg-dark px-3 px-lg-4 shadow-sm">
       <div className="container-fluid">
+
         {/* LOGO */}
-        <Link to="/" className="navbar-brand d-flex align-items-center">
+        <Link to={user ? "/home" : "/login"} className="navbar-brand d-flex align-items-center">
           <img
             src={logo}
             alt="logo"
@@ -31,25 +40,20 @@ function Navbar() {
         {/* MENU */}
         <div className="collapse navbar-collapse" id="navMenu">
           <ul className="navbar-nav ms-auto align-items-lg-center gap-lg-2">
+
             <li className="nav-item">
-              <Link
-                to="/Home"
-                className={`nav-link text-white ${isActive("/Home")}`}
-              >
+              <Link to="/home" className={`nav-link text-white ${isActive("/home")}`}>
                 Home
               </Link>
             </li>
 
             <li className="nav-item">
-              <Link
-                to="/about"
-                className={`nav-link text-white ${isActive("/about")}`}
-              >
+              <Link to="/about" className={`nav-link text-white ${isActive("/about")}`}>
                 About
               </Link>
             </li>
 
-            {/* SERVICE DROPDOWN */}
+            {/* SERVICE */}
             <li className="nav-item dropdown">
               <span
                 className="nav-link dropdown-toggle text-white"
@@ -59,20 +63,12 @@ function Navbar() {
                 Service
               </span>
               <ul className="dropdown-menu">
-                <li>
-                  <Link to="/trading" className="dropdown-item">
-                    Training
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/placement" className="dropdown-item">
-                    Placement
-                  </Link>
-                </li>
+                <li><Link to="/trading" className="dropdown-item">Training</Link></li>
+                <li><Link to="/placement" className="dropdown-item">Placement</Link></li>
               </ul>
             </li>
 
-            {/* PROGRAM DROPDOWN */}
+            {/* PROGRAM */}
             <li className="nav-item dropdown">
               <span
                 className="nav-link dropdown-toggle text-white"
@@ -82,44 +78,49 @@ function Navbar() {
                 Program
               </span>
               <ul className="dropdown-menu">
-                <li>
-                  <Link to="/blog" className="dropdown-item">
-                    Blog
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/gallery" className="dropdown-item">
-                    Gallery
-                  </Link>
-                </li>
+                <li><Link to="/blog" className="dropdown-item">Blog</Link></li>
+                <li><Link to="/gallery" className="dropdown-item">Gallery</Link></li>
               </ul>
             </li>
 
             <li className="nav-item">
-              <Link
-                to="/contact"
-                className={`nav-link text-white ${isActive("/contact")}`}
-              >
+              <Link to="/contact" className={`nav-link text-white ${isActive("/contact")}`}>
                 Contact
               </Link>
             </li>
+
           </ul>
-          <div className="ms-auto d-flex align-items-center">
+
+          {/* RIGHT SIDE */}
+          <div className="ms-auto d-flex align-items-center gap-2">
+
             {user ? (
-              <button
-                className="btn btn-success px-3 rounded-pill"
-                onClick={() => navigate("/profile")}
-              >
-                {user.first_name}
-              </button>
+              <>
+                {/* PROFILE */}
+                <button
+                  className="btn btn-success px-3 rounded-pill"
+                  onClick={() => navigate("/profile")}
+                >
+                  {user.first_name}
+                </button>
+
+                {/* LOGOUT */}
+                <button
+                  className="btn btn-danger px-3 rounded-pill"
+                  onClick={handleLogout}
+                >
+                  Logout
+                </button>
+              </>
             ) : (
               <button
-                className="btn btn-primary px-3 rounded-pill"
-                onClick={() => navigate("/")}
+                className="btn btn-primary px-4 rounded-pill"
+                onClick={() => navigate("/login")}
               >
                 Login
               </button>
             )}
+
           </div>
         </div>
       </div>
