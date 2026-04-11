@@ -8,10 +8,7 @@ import StateSelect from "./StateSelect";
 import BottomCarousel from "./BottomCarousel";
 import Footer from "./Footer";
 import Dashboard from "./Dashboard";
-import AuthModal from "./AuthModal";
 import Benefits from "./Benefits";
-
-// 👉 PAGES
 import About from "./About";
 import Service from "./Service";
 import Trading from "./Trading";
@@ -19,7 +16,8 @@ import Placement from "./Placement";
 import Blog from "./Blog";
 import Gallery from "./Gallery";
 import Contact from "./Contact";
-
+import Rrgister from "./Rrgister";
+import Login from "./Login";
 
 // ✅ HOME PAGE
 function Home() {
@@ -32,6 +30,7 @@ function Home() {
       <StateSelect />
       <BottomCarousel />
       <Footer />
+      <Rrgister/>
     </>
   );
 }
@@ -54,7 +53,6 @@ function App() {
       <Navbar />
 
       {/* 🔥 Modal global (IMPORTANT FIX) */}
-      <AuthModal />
 
       <Routes>
 
@@ -69,6 +67,9 @@ function App() {
         <Route path="/blog" element={<Blog />} />
         <Route path="/gallery" element={<Gallery />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/login" element={<Login />} />
+      
+
 
         {/* DASHBOARD */}
         <Route
