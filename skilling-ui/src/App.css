@@ -16,7 +16,7 @@
   font-weight: 600;
 }
 
-/* UNDERLINE ANIMATION 🔥 */
+/* UNDERLINE ANIMATION  */
 .nav-link::after {
   content: "";
   position: absolute;

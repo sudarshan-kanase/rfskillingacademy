@@ -20,7 +20,7 @@ import StateSelect from "./StateSelect";
 import BottomCarousel from "./BottomCarousel";
 import Benefits from "./Benefits";
 
-// ✅ HOME
+// HOME
 function Home() {
   return (
     <>
@@ -34,7 +34,7 @@ function Home() {
   );
 }
 
-// ✅ PROTECTED
+// PROTECTED
 function ProtectedRoute({ children }) {
   const user = JSON.parse(localStorage.getItem("user"));
   return user ? children : <Navigate to="/login" />;
@@ -85,7 +85,7 @@ function App() {
           }
         />
 
-        {/* PROFILE (protected 🔥) */}
+        {/* PROFILE (protected ) */}
         <Route
           path="/profile"
           element={
