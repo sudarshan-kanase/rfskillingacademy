@@ -55,25 +55,47 @@ function App() {
         {/* REGISTER */}
         <Route path="/register" element={<Register />} />
 
-        {/* HOME */}
+        {/* HOME (PROTECTED 🔥) */}
         <Route
           path="/home"
           element={
-            <>
-              <Home />
-              <Footer />
-            </>
+            <ProtectedRoute>
+              <>
+                <Home />
+                <Footer />
+              </>
+            </ProtectedRoute>
           }
         />
 
-        {/* PAGES */}
-        <Route path="/about" element={<><About /><Footer /></>} />
-        <Route path="/service" element={<><Service /><Footer /></>} />
-        <Route path="/trading" element={<><Trading /><Footer /></>} />
-        <Route path="/placement" element={<><Placement /><Footer /></>} />
-        <Route path="/blog" element={<><Blog /><Footer /></>} />
-        <Route path="/gallery" element={<><Gallery /><Footer /></>} />
-        <Route path="/contact" element={<><Contact /><Footer /></>} />
+        {/* PAGES (ALL PROTECTED 🔥) */}
+        <Route path="/about" element={
+          <ProtectedRoute><><About /><Footer /></></ProtectedRoute>
+        } />
+
+        <Route path="/service" element={
+          <ProtectedRoute><><Service /><Footer /></></ProtectedRoute>
+        } />
+
+        <Route path="/trading" element={
+          <ProtectedRoute><><Trading /><Footer /></></ProtectedRoute>
+        } />
+
+        <Route path="/placement" element={
+          <ProtectedRoute><><Placement /><Footer /></></ProtectedRoute>
+        } />
+
+        <Route path="/blog" element={
+          <ProtectedRoute><><Blog /><Footer /></></ProtectedRoute>
+        } />
+
+        <Route path="/gallery" element={
+          <ProtectedRoute><><Gallery /><Footer /></></ProtectedRoute>
+        } />
+
+        <Route path="/contact" element={
+          <ProtectedRoute><><Contact /><Footer /></></ProtectedRoute>
+        } />
 
         {/* DASHBOARD */}
         <Route
@@ -85,7 +107,7 @@ function App() {
           }
         />
 
-        {/* PROFILE (protected ) */}
+        {/* PROFILE */}
         <Route
           path="/profile"
           element={
