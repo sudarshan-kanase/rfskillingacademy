@@ -11,11 +11,32 @@ function Contact() {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    alert("Message Sent Successfully ✅");
-    setForm({ name: "", email: "", message: "" });
-  };
+  const handleSubmit = async (e) => {
+  e.preventDefault();
+
+  try {
+    const res = await fetch("http://localhost:5000/contact", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(form),
+    });
+
+    const data = await res.json();
+
+    if (data.success) {
+      alert(data.message);
+      setForm({ name: "", email: "", message: "" });
+    } else {
+      alert(data.message);
+    }
+
+  // eslint-disable-next-line no-unused-vars
+  } catch (err) {
+    alert("Server error ❌");
+  }
+};
 
   return (
     <div className="container py-5">
