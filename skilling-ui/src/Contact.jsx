@@ -108,25 +108,27 @@ function Contact() {
             <h4 className="fw-bold mb-3">Get in Touch</h4>
 
             <p className="mb-2">
-              <strong>📍 Address:</strong> Aurangabad, Maharashtra
+              <strong><i class="fa-solid fa-location-arrow"></i> Address:</strong> Aurangabad, Maharashtra
             </p>
 
             <p className="mb-2">
-              <strong>📞 Phone:</strong> +91 9984484484
+              <strong><i class="fa-solid fa-phone"></i> Phone:</strong> +91 9984484484
             </p>
 
             <p className="mb-3">
-              <strong>📧 Email:</strong> contactus@senseigen.com
+              <strong><i class="fa-solid fa-envelope"></i> Email:</strong> contactus@senseigen.com
             </p>
 
             <hr />
 
             <h5 className="fw-semibold mt-3">Follow Us</h5>
 
-            <div className="d-flex gap-3 mt-2">
-              <span>📸</span>
-              <span>💼</span>
-              <span>▶️</span>
+            {/* Social */}
+            <div className="d-flex justify-content-center justify-content-lg-start gap-3 mt-3">
+              <a href="#"><i class="fa-brands fa-square-facebook"></i></a>
+              <a href="#"><i class="fa-brands fa-instagram"></i></a>
+              <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+              <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
             </div>
 
           </div>

@@ -51,11 +51,10 @@ function Footer() {
 
             {/* Social */}
             <div className="d-flex justify-content-center justify-content-lg-start gap-3 mt-3">
-              <a href="#" className="social-icon">📘</a>
-              <a href="#" className="social-icon">🐦</a>
-              <a href="#" className="social-icon">📸</a>
-              <a href="#" className="social-icon">▶️</a>
-              <a href="#" className="social-icon">💼</a>
+              <a href="#" className="social-icon"><i class="fa-brands fa-square-facebook"></i></a>
+              <a href="#" className="social-icon"><i class="fa-brands fa-instagram"></i></a>
+              <a href="#" className="social-icon"><i class="fa-brands fa-linkedin"></i></a>
+              <a href="#" className="social-icon"><i class="fa-brands fa-x-twitter"></i></a>
             </div>
           </div>
 
