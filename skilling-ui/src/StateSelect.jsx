@@ -28,17 +28,23 @@ function StateSelect() {
           </div>
 
           {/* RIGHT MAP */}
-          {/* RIGHT MAP */}
           <div className="col-lg-7 text-center">
-            <div className="rf-map-container">
-              <iframe
-                title="map"
-                src="https://maps.google.com/maps?q=Maharashtra&t=&z=6&ie=UTF8&iwloc=&output=embed"
-                className="rf-map-frame"
-                loading="lazy"
-              ></iframe>
-            </div>
-          </div>
+  <div
+    className="rf-map-container rounded-4 shadow-sm overflow-hidden"
+    style={{ height: "400px" }}
+  >
+    <iframe
+      title="Google Map"
+      src="https://maps.google.com/maps?q=Maharashtra&z=6&output=embed"
+      width="100%"
+      height="100%"
+      style={{ border: 0 }}
+      loading="lazy"
+      referrerPolicy="no-referrer-when-downgrade"
+      allowFullScreen
+    ></iframe>
+  </div>
+</div>
         </div>
       </div>
 
