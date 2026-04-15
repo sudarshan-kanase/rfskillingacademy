@@ -55,7 +55,7 @@ function App() {
         {/* REGISTER */}
         <Route path="/register" element={<Register />} />
 
-        {/* HOME (PROTECTED 🔥) */}
+        {/* HOME (PROTECTED ) */}
         <Route
           path="/home"
           element={
@@ -68,7 +68,7 @@ function App() {
           }
         />
 
-        {/* PAGES (ALL PROTECTED 🔥) */}
+        {/* PAGES (ALL PROTECTED ) */}
         <Route path="/about" element={
           <ProtectedRoute><><About /><Footer /></></ProtectedRoute>
         } />
