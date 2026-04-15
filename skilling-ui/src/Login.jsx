@@ -32,8 +32,8 @@ function Login() {
 
       if (data.success) {
         localStorage.setItem("user", JSON.stringify(data.user));
-        alert("Login Successful ✅");
-        navigate("/dashboard");
+        alert("Login Successful ");
+        navigate("/Home");
       } else {
         alert(data.message || "Invalid credentials ❌");
       }
